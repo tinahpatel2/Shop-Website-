@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YOUR SHOP NAME | Wholesale &amp; Retail Hardware, Plywood, Machinery &amp; Industrial Supplies</title>
+<meta name="description" content="Wholesale and retail supplier of chemicals, plywood, doors, machinery, adhesives, grease, hardware items, V-belts and saw blades.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --ink:#201D1A;
+    --ink-2:#2C2823;
+    --paper:#EDE7D8;
+    --card:#FFFDF8;
+    --stamp:#F0501B;
+    --cta:#C2410C;
+    --steel:#3E6B7A;
+    --rule:#C9BFA8;
+    --muted:#6B6252;
+    --success:#2E7D4F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;}
+  h1,h2,h3,h4{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.3px;}
+  a{color:inherit;}
+  button{font-family:inherit;}
+  :focus-visible{outline:2px solid var(--stamp);outline-offset:2px;}
+  section{scroll-margin-top:104px;}
+  img{max-width:100%;display:block;}
+
+  /* ---------- Demo banner ---------- */
+  .demo-banner{background:#FCEFD1;color:#5B4A16;text-align:center;padding:0.55rem 2.5rem;font-size:0.82rem;position:relative;border-bottom:1px solid #E9D8A6;}
+  .demo-banner button{position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:0.95rem;color:#5B4A16;}
+
+  /* ---------- Topbar ---------- */
+  .topbar{background:var(--ink-2);color:#BFB9AE;font-family:'Space Mono',monospace;font-size:0.74rem;padding:0.4rem 1.5rem;text-align:center;letter-spacing:0.3px;}
+
+  /* ---------- Header ---------- */
+  .header{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:3px solid var(--stamp);}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+  .logo{color:var(--card);font-size:1.5rem;font-weight:700;letter-spacing:0.5px;}
+  .logo span{color:var(--stamp);}
+  .nav-toggle{display:none;background:none;border:none;color:var(--card);font-size:1.4rem;cursor:pointer;}
+  .nav-links{display:flex;gap:1.8rem;list-style:none;}
+  .nav-links a{color:var(--card);text-decoration:none;font-weight:600;font-size:0.88rem;text-transform:uppercase;letter-spacing:0.4px;transition:color .15s;}
+  .nav-links a:hover{color:var(--stamp);}
+  .header-actions{display:flex;align-items:center;gap:1rem;}
+  .cart-btn{position:relative;background:var(--cta);color:var(--card);border:none;padding:0.6rem 1rem;border-radius:4px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;text-transform:uppercase;}
+  .cart-badge{position:absolute;top:-9px;right:-9px;background:var(--stamp);color:var(--card);border:2px solid var(--ink);border-radius:50%;width:22px;height:22px;display:none;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;font-family:'Space Mono',monospace;}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--ink);color:var(--card);position:relative;overflow:hidden;padding:4.5rem 1.5rem 3rem;background-image:repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0px, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 9px);}
+  .hero-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;}
+  .eyebrow{font-family:'Space Mono',monospace;color:var(--stamp);font-size:0.8rem;letter-spacing:2px;margin-bottom:1rem;}
+  .hero h1{font-size:2.6rem;line-height:1.15;margin-bottom:1.1rem;}
+  .hero h1 em{font-style:normal;color:var(--stamp);}
+  .hero p{color:#C9C2B4;font-size:1.05rem;max-width:620px;margin:0 auto 2rem;}
+  .hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  .btn{padding:0.85rem 1.7rem;border-radius:4px;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;font-size:0.9rem;display:inline-flex;align-items:center;gap:0.5rem;transition:all .15s;text-transform:uppercase;letter-spacing:0.3px;}
+  .btn-primary{background:var(--cta);color:var(--card);}
+  .btn-primary:hover{background:#A6360A;}
+  .btn-outline{background:transparent;color:var(--card);border-color:rgba(255,253,248,0.4);}
+  .btn-outline:hover{border-color:var(--card);}
+
+  /* ---------- Ticker ---------- */
+  .ticker{background:var(--stamp);overflow:hidden;white-space:nowrap;border-top:1px solid rgba(0,0,0,0.15);border-bottom:1px solid rgba(0,0,0,0.15);}
+  .ticker-track{display:inline-block;padding:0.55rem 0;font-family:'Space Mono',monospace;font-size:0.78rem;color:var(--ink);font-weight:700;letter-spacing:0.5px;animation:ticker 32s linear infinite;}
+  .ticker-track span{margin:0 1.2rem;}
+  @keyframes ticker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion: reduce){.ticker-track{animation:none;}}
+
+  /* ---------- Trust strip ---------- */
+  .trust-strip{background:var(--card);border-bottom:1px dashed var(--rule);padding:0.9rem 1.5rem;display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;}
+  .trust-item{display:flex;align-items:center;gap:0.5rem;font-family:'Space Mono',monospace;font-size:0.74rem;text-transform:uppercase;letter-spacing:0.4px;color:var(--muted);}
+  .trust-item i{color:var(--stamp);}
+
+  /* ---------- Sections ---------- */
+  .section{padding:3.5rem 1.5rem;max-width:1200px;margin:0 auto;}
+  .section-header{text-align:center;margin-bottom:2.2rem;}
+  .section-eyebrow{font-family:'Space Mono',monospace;color:var(--steel);font-size:0.78rem;letter-spacing:1.5px;margin-bottom:0.4rem;}
+  .section-title{font-size:2rem;}
+  .section-title em{font-style:normal;color:var(--stamp);}
+  .section-subtitle{color:var(--muted);margin-top:0.5rem;font-size:0.95rem;}
+
+  /* ---------- Category grid ---------- */
+  .category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.4rem;}
+  .tag-card{position:relative;background:var(--card);border:1.5px solid var(--rule);border-top:none;border-radius:0 0 6px 6px;}
+  .tag-card::before{content:'';position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:13px;height:13px;border-radius:50%;background:var(--paper);border:1.5px solid var(--rule);z-index:2;}
+  .tag-card::after{content:'';position:absolute;top:-1.5px;left:0;right:0;border-top:2px dashed var(--rule);}
+  .category-card{padding:1.6rem 1rem 1.4rem;text-align:center;cursor:pointer;transition:transform .15s, box-shadow .15s;}
+  .category-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(32,29,26,0.12);}
+  .category-icon{width:54px;height:54px;border-radius:50%;background:var(--ink);color:var(--stamp);display:flex;align-items:center;justify-content:center;font-size:1.35rem;margin:0 auto 0.9rem;}
+  .category-aisle{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--steel);letter-spacing:0.5px;margin-bottom:0.3rem;}
+  .category-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:1rem;margin-bottom:0.25rem;}
+  .category-count{font-size:0.76rem;color:var(--muted);}
+
+  /* ---------- Products toolbar ---------- */
+  .products-toolbar{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;}
+  .search-box{position:relative;max-width:380px;}
+  .search-box input{width:100%;padding:0.7rem 1rem 0.7rem 2.4rem;border:1.5px solid var(--rule);border-radius:5px;font-size:0.9rem;background:var(--card);font-family:'Inter',sans-serif;}
+  .search-box i{position:absolute;left:0.85rem;top:50%;transform:translateY(-50%);color:var(--muted);font-size:0.85rem;}
+  .filter-pills{display:flex;flex-wrap:wrap;gap:0.55rem;}
+  .pill{padding:0.45rem 1rem;border-radius:20px;border:1.5px solid var(--rule);background:var(--card);cursor:pointer;font-size:0.78rem;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.3px;transition:all .15s;}
+  .pill.active,.pill:hover{background:var(--ink);border-color:var(--ink);color:var(--card);}
+
+  /* ---------- Product grid ---------- */
+  .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.5rem;}
+  .product-card{padding:1.5rem 1.3rem;display:flex;flex-direction:column;gap:0.3rem;}
+  .product-sku{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--muted);letter-spacing:0.5px;}
+  .product-icon{width:46px;height:46px;border-radius:6px;background:var(--paper);color:var(--stamp);display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin:0.4rem 0 0.6rem;}
+  .product-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:1.02rem;}
+  .product-unit{font-size:0.78rem;color:var(--muted);margin-bottom:0.5rem;}
+  .price-stamp{display:inline-block;font-family:'Space Mono',monospace;font-weight:700;font-size:1.05rem;background:var(--card);border:2px solid var(--ink);border-radius:4px;padding:0.28rem 0.65rem;transform:rotate(-2deg);box-shadow:2px 2px 0 rgba(32,29,26,0.14);width:fit-content;margin-bottom:0.6rem;}
+  .price-wholesale-tag{display:inline-flex;align-items:center;gap:0.3rem;font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--steel);border:1px dashed var(--steel);border-radius:3px;padding:0.2rem 0.5rem;margin-bottom:0.85rem;width:fit-content;}
+  .qty-row{display:flex;gap:0.55rem;margin-top:auto;}
+  .qty-input{width:56px;padding:0.5rem;border:1.5px solid var(--rule);border-radius:4px;text-align:center;font-family:'Space Mono',monospace;background:var(--card);}
+  .add-btn{flex:1;padding:0.55rem;font-size:0.76rem;}
+  .empty-state{text-align:center;padding:3rem 1rem;color:var(--muted);grid-column:1/-1;}
+  .empty-state .btn{margin-top:1rem;}
+
+  /* ---------- About ---------- */
+  #about{background:var(--card);max-width:100%;padding:0;}
+  .about-inner{max-width:1200px;margin:0 auto;padding:3.5rem 1.5rem;}
+  .about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:3rem;align-items:center;}
+  .about-text p{color:var(--muted);margin:1rem 0;line-height:1.75;font-size:0.96rem;}
+  .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+  .stat-card{background:var(--paper);border:1.5px solid var(--rule);border-radius:6px;padding:1.4rem 1rem;text-align:center;}
+  .stat-number{font-family:'Oswald',sans-serif;font-size:1.9rem;font-weight:700;color:var(--cta);}
+  .stat-label{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--muted);margin-top:0.3rem;letter-spacing:0.3px;text-transform:uppercase;}
+
+  /* ---------- Contact ---------- */
+  #contact{background:var(--ink-2);max-width:100%;padding:0;color:var(--card);}
+  .contact-inner{max-width:1200px;margin:0 auto;padding:3.5rem 1.5rem;}
+  #contact .section-subtitle{color:#BFB9AE;}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.3rem;margin-top:2rem;}
+  .contact-card{background:var(--ink);border:1px solid rgba(255,253,248,0.12);padding:1.4rem;border-radius:6px;text-align:center;}
+  .contact-card i{font-size:1.4rem;color:var(--stamp);margin-bottom:0.7rem;}
+  .contact-card h4{margin-bottom:0.35rem;font-size:0.95rem;}
+  .contact-card p{color:#BFB9AE;font-size:0.85rem;}
+  .contact-whatsapp{text-align:center;margin-top:2rem;}
+
+  /* ---------- Footer ---------- */
+  .footer{background:var(--ink);color:#93897A;padding:2.8rem 1.5rem 1.3rem;}
+  .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,253,248,0.08);}
+  .footer-col h4{color:var(--card);margin-bottom:0.9rem;font-size:0.85rem;letter-spacing:0.5px;}
+  .footer-col p{font-size:0.82rem;line-height:1.6;}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:0.5rem;}
+  .footer-col a{text-decoration:none;font-size:0.82rem;color:#93897A;}
+  .footer-col a:hover{color:var(--stamp);}
+  .footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.3rem;text-align:center;font-size:0.76rem;font-family:'Space Mono',monospace;}
+
+  /* ---------- Cart panel ---------- */
+  .backdrop{position:fixed;inset:0;background:rgba(32,29,26,0.55);z-index:200;opacity:0;visibility:hidden;transition:opacity .25s;}
+  .backdrop.open{opacity:1;visibility:visible;}
+  .cart-panel{position:fixed;top:0;right:-420px;width:400px;max-width:100%;height:100%;background:var(--card);z-index:201;transition:right .28s;display:flex;flex-direction:column;box-shadow:-6px 0 24px rgba(0,0,0,0.18);}
+  .cart-panel.open{right:0;}
+  .cart-header{padding:1.1rem 1.4rem;border-bottom:1px dashed var(--rule);display:flex;justify-content:space-between;align-items:center;}
+  .cart-header h3{font-size:1.25rem;}
+  .icon-btn{background:none;border:none;font-size:1.2rem;cursor:pointer;color:var(--muted);}
+  .cart-items{flex:1;overflow-y:auto;padding:0.6rem 1.4rem;}
+  .cart-item{display:grid;grid-template-columns:1fr auto auto auto;gap:0.6rem;align-items:center;padding:0.9rem 0;border-bottom:1px dashed var(--rule);}
+  .cart-item-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:0.9rem;}
+  .cart-item-unit{font-size:0.74rem;color:var(--muted);font-family:'Space Mono',monospace;}
+  .cart-item-hint{font-size:0.68rem;color:var(--stamp);margin-top:0.2rem;}
+  .cart-item-hint.applied{color:var(--success);}
+  .cart-item-controls{display:flex;align-items:center;gap:0.35rem;}
+  .cart-item-controls button{width:24px;height:24px;border:1.5px solid var(--rule);background:var(--card);border-radius:4px;cursor:pointer;font-weight:700;}
+  .cart-item-total{font-family:'Space Mono',monospace;font-weight:700;font-size:0.86rem;}
+  .cart-item-remove{background:none;border:none;color:#B23A2E;cursor:pointer;font-size:0.9rem;}
+  .cart-footer{padding:1.1rem 1.4rem 1.3rem;border-top:1px dashed var(--rule);}
+  .cart-subtotal-row{display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-weight:700;font-size:1.05rem;margin-bottom:0.9rem;}
+  .cart-footer .btn{width:100%;justify-content:center;}
+
+  /* ---------- Checkout modal ---------- */
+  .checkout-modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(0.96);width:480px;max-width:92%;max-height:86vh;overflow-y:auto;background:var(--card);border-radius:8px;z-index:301;opacity:0;visibility:hidden;transition:all .25s;}
+  .checkout-modal.open{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1);}
+  .checkout-header{padding:1.3rem 1.4rem;border-bottom:1px dashed var(--rule);display:flex;justify-content:space-between;align-items:center;}
+  .checkout-header h3{font-size:1.25rem;}
+  .checkout-body{padding:1.4rem;}
+  .form-group{margin-bottom:0.9rem;}
+  .form-group label{display:block;font-weight:600;margin-bottom:0.35rem;font-size:0.82rem;}
+  .form-group input,.form-group textarea{width:100%;padding:0.65rem;border:1.5px solid var(--rule);border-radius:4px;font-family:inherit;font-size:0.88rem;background:var(--paper);}
+  .form-group textarea{resize:vertical;min-height:60px;}
+  .order-summary{background:var(--paper);border:1px dashed var(--rule);border-radius:6px;padding:0.9rem 1rem;margin:1.2rem 0;}
+  .summary-row{display:flex;justify-content:space-between;font-size:0.84rem;padding:0.28rem 0;color:var(--muted);font-family:'Space Mono',monospace;}
+  .summary-total{font-weight:700;color:var(--ink);font-size:0.95rem;border-top:1px dashed var(--rule);margin-top:0.4rem;padding-top:0.55rem;}
+  .checkout-actions{display:flex;flex-direction:column;gap:0.65rem;}
+  .btn-whatsapp{background:#1F9E52;color:var(--card);justify-content:center;}
+  .btn-whatsapp:hover{background:#178041;}
+  .btn-email{background:var(--ink);color:var(--card);justify-content:center;}
+  .btn-email:hover{background:var(--ink-2);}
+  .checkout-note{font-size:0.72rem;color:var(--muted);text-align:center;margin-top:0.8rem;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .nav-toggle{display:block;}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--ink);flex-direction:column;padding:1rem 1.5rem;gap:1rem;border-top:1px solid rgba(255,253,248,0.1);}
+    .nav-links.open{display:flex;}
+    .header{position:sticky;}
+    .header-inner{position:relative;}
+    .hero h1{font-size:2rem;}
+    .about-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:480px){
+    .cart-panel{width:100%;right:-100%;}
+    .checkout-modal{width:94%;}
+    .footer-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:1.7rem;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="demo-banner" id="demo-banner">
+    This is a starter template — sample products, prices and contact details below. Replace them with your real shop details.
+    <button onclick="document.getElementById('demo-banner').style.display='none'" aria-label="Dismiss">✕</button>
+  </div>
+
+  <div class="topbar">CALL / WHATSAPP: +91-XXXXXXXXXX &nbsp;·&nbsp; MON–SAT 9:00 AM – 8:00 PM &nbsp;·&nbsp; WHOLESALE &amp; RETAIL</div>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">YOUR<span>SHOP</span>NAME</div>
+      <button class="nav-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" onclick="closeMobileNav()">Home</a></li>
+        <li><a href="#categories" onclick="closeMobileNav()">Categories</a></li>
+        <li><a href="#products" onclick="closeMobileNav()">Products</a></li>
+        <li><a href="#about" onclick="closeMobileNav()">About</a></li>
+        <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+      </ul>
+      <div class="header-actions">
+        <button class="cart-btn" onclick="openCart()">
+          <i class="fa-solid fa-cart-shopping"></i> Cart
+          <span class="cart-badge" id="cart-badge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">WHOLESALE &amp; RETAIL SUPPLY · SINCE [YEAR]</div>
+      <h1>Stocked for every job — <em>one piece or a full pallet.</em></h1>
+      <p>Chemicals, plywood &amp; doors, machinery, adhesives, grease, hardware, V-belts and saw blades — under one roof, priced for tradesmen and households alike.</p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-primary"><i class="fa-solid fa-boxes-stacked"></i> Browse Products</a>
+        <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-location-dot"></i> Visit The Store</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="ticker-track"></div>
+  </div>
+
+  <div class="trust-strip">
+    <div class="trust-item"><i class="fa-solid fa-truck-ramp-box"></i> Bulk Pallet Orders</div>
+    <div class="trust-item"><i class="fa-solid fa-cash-register"></i> Cash &amp; Carry Counter</div>
+    <div class="trust-item"><i class="fa-solid fa-handshake"></i> Trade Accounts Welcome</div>
+    <div class="trust-item"><i class="fa-solid fa-warehouse"></i> Same-Day Store Pickup</div>
+  </div>
+
+  <section id="categories" class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">FIND YOUR AISLE</div>
+      <h2 class="section-title">Shop by <em>Category</em></h2>
+      <p class="section-subtitle">Eight aisles, stocked wholesale and retail.</p>
+    </div>
+    <div class="category-grid" id="category-grid"></div>
+  </section>
+
+  <section id="products" class="section">
+    <div class="section-header">
+      <div class="section-eyebrow">THE FULL CATALOG</div>
+      <h2 class="section-title">Products &amp; <em>Stock Tags</em></h2>
+      <p class="section-subtitle">Prices shown are per unit. Wholesale rate applies automatically once you hit the minimum quantity.</p>
+    </div>
+    <div class="products-toolbar">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-input" placeholder="Search products..." oninput="searchQuery=this.value; renderProducts();">
+      </div>
+      <div class="filter-pills" id="filter-pills"></div>
+    </div>
+    <div class="product-grid" id="product-grid"></div>
+  </section>
+
+  <section id="about">
+    <div class="about-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">WHO WE ARE</div>
+        <h2 class="section-title">About <em>The Shop</em></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>[Replace this with your shop's real story — when it opened, what makes your stock or service different, and who you serve. A line or two on how you source and price for both retail customers and bulk/trade buyers works well here.]</p>
+          <p>[Add a second paragraph if useful — service area, delivery options, or your most-trusted product lines.]</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-number">20+</div><div class="stat-label">Years Trading</div></div>
+          <div class="stat-card"><div class="stat-number">300+</div><div class="stat-label">Products Stocked</div></div>
+          <div class="stat-card"><div class="stat-number">8</div><div class="stat-label">Aisles / Categories</div></div>
+          <div class="stat-card"><div class="stat-number">1000+</div><div class="stat-label">Regular Customers</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-header">
+        <div class="section-eyebrow">GET IN TOUCH</div>
+        <h2 class="section-title">Visit or <em>Contact Us</em></h2>
+        <p class="section-subtitle">Drop by the counter, or reach us directly for wholesale enquiries.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card"><i class="fa-solid fa-location-dot"></i><h4>Address</h4><p>[Shop No., Street, Market Area]<br>[City, State – PIN]</p></div>
+        <div class="contact-card"><i class="fa-solid fa-phone"></i><h4>Phone</h4><p>+91-XXXXXXXXXX</p></div>
+        <div class="contact-card"><i class="fa-solid fa-envelope"></i><h4>Email</h4><p>yourshop@example.com</p></div>
+        <div class="contact-card"><i class="fa-solid fa-clock"></i><h4>Hours</h4><p>Mon–Sat: 9:00 AM – 8:00 PM<br>Sun: Closed</p></div>
+      </div>
+      <div class="contact-whatsapp">
+        <a class="btn btn-whatsapp" id="contact-whatsapp-link" href="#"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>YOUR SHOP NAME</h4>
+        <p>Wholesale &amp; retail supplier of chemicals, plywood, machinery, adhesives, hardware and more. [Replace with your real tagline.]</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul id="footer-categories"></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>+91-XXXXXXXXXX</li>
+          <li>yourshop@example.com</li>
+          <li>Mon–Sat, 9AM–8PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> YOUR SHOP NAME. All rights reserved.</div>
+  </footer>
+
+  <!-- Cart panel -->
+  <div class="backdrop" id="cart-backdrop" onclick="closeCart()"></div>
+  <div class="cart-panel" id="cart-panel">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="icon-btn" onclick="closeCart()" aria-label="Close cart"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal-row"><span>Subtotal</span><span id="cart-subtotal">₹0</span></div>
+      <button class="btn btn-primary" onclick="openCheckout()"><i class="fa-solid fa-file-invoice"></i> Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Checkout modal -->
+  <div class="backdrop" id="checkout-backdrop" onclick="closeCheckout()"></div>
+  <div class="checkout-modal" id="checkout-modal">
+    <div class="checkout-header">
+      <h3>Place Your Order</h3>
+      <button class="icon-btn" onclick="closeCheckout()" aria-label="Close checkout"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="checkout-body">
+      <div class="form-group">
+        <label for="cust-name">Full Name *</label>
+        <input type="text" id="cust-name" placeholder="Your name">
+      </div>
+      <div class="form-group">
+        <label for="cust-phone">Phone Number *</label>
+        <input type="tel" id="cust-phone" placeholder="10-digit mobile number">
+      </div>
+      <div class="form-group">
+        <label for="cust-address">Delivery Address (optional)</label>
+        <textarea id="cust-address" placeholder="Leave blank for store pickup"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="cust-notes">Notes (optional)</label>
+        <textarea id="cust-notes" placeholder="Anything else we should know"></textarea>
+      </div>
+      <div class="order-summary" id="checkout-summary"></div>
+      <div class="checkout-actions">
+        <button class="btn btn-whatsapp" onclick="sendWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Send Order via WhatsApp</button>
+        <button class="btn btn-email" onclick="sendEmailOrder()"><i class="fa-solid fa-envelope"></i> Send Order via Email</button>
+      </div>
+      <p class="checkout-note">This sends your order details to the shop — payment and delivery are confirmed directly with you.</p>
+    </div>
+  </div>
+
+<script>
+  // ========================================
+  // EDIT THIS SECTION: Your Shop's Contact Info
+  // ========================================
+  const SHOP_WHATSAPP = '919999999999'; // country code + number, digits only, no + or spaces
+  const SHOP_EMAIL = 'yourshop@example.com';
+
+  // ========================================
+  // EDIT THIS SECTION: Your Categories
+  // (id must match the category value used in PRODUCTS below)
+  // ========================================
+  const CATEGORIES = [
+    {id:'chemicals', name:'Chemicals', aisle:'AISLE 01', icon:'fa-flask'},
+    {id:'plywood',   name:'Plywood & Doors', aisle:'AISLE 02', icon:'fa-layer-group'},
+    {id:'machinery', name:'Machinery', aisle:'AISLE 03', icon:'fa-gear'},
+    {id:'adhesives', name:'Adhesives', aisle:'AISLE 04', icon:'fa-droplet'},
+    {id:'grease',    name:'Grease & Lubricants', aisle:'AISLE 05', icon:'fa-oil-can'},
+    {id:'hardware',  name:'Hardware Items', aisle:'AISLE 06', icon:'fa-toolbox'},
+    {id:'vbelts',    name:'V-Belts', aisle:'AISLE 07', icon:'fa-circle-notch'},
+    {id:'saw',       name:'Saw Blades & Machine Rolls', aisle:'AISLE 08', icon:'fa-compact-disc'}
+  ];
+
+  // ========================================
+  // EDIT THIS SECTION: Your Product Catalog
+  // Each product: id (unique), sku, name, unit, category (matches a category id above),
+  // retail (price), wholesale (bulk price), minQty (units needed to unlock wholesale price)
+  // ========================================
+  const PRODUCTS = [
+    {id:1, sku:'CHM-001', name:'Industrial Degreaser', unit:'5L can', category:'chemicals', retail:450, wholesale:380, minQty:10},
+    {id:2, sku:'CHM-002', name:'Rust Remover Solution', unit:'1L bottle', category:'chemicals', retail:180, wholesale:150, minQty:12},
+    {id:3, sku:'CHM-003', name:'Concrete Sealant', unit:'10L drum', category:'chemicals', retail:1200, wholesale:1050, minQty:5},
+
+    {id:4, sku:'PLY-001', name:'Marine Plywood 19mm', unit:'8x4 ft sheet', category:'plywood', retail:3200, wholesale:2900, minQty:10},
+    {id:5, sku:'PLY-002', name:'Flush Door', unit:'7x3 ft', category:'plywood', retail:2800, wholesale:2500, minQty:5},
+    {id:6, sku:'PLY-003', name:'MDF Board 12mm', unit:'8x4 ft sheet', category:'plywood', retail:1800, wholesale:1600, minQty:10},
+
+    {id:7, sku:'MCH-001', name:'Bench Grinder 6-inch', unit:'unit', category:'machinery', retail:4500, wholesale:4100, minQty:3},
+    {id:8, sku:'MCH-002', name:'Wood Planer Machine', unit:'unit', category:'machinery', retail:8500, wholesale:7800, minQty:2},
+    {id:9, sku:'MCH-003', name:'Air Compressor 50L', unit:'unit', category:'machinery', retail:12000, wholesale:11000, minQty:2},
+
+    {id:10, sku:'ADH-001', name:'Fevicol SH', unit:'1kg tin', category:'adhesives', retail:220, wholesale:190, minQty:12},
+    {id:11, sku:'ADH-002', name:'Fevikwik Instant Adhesive', unit:'pack of 10', category:'adhesives', retail:350, wholesale:300, minQty:10},
+    {id:12, sku:'ADH-003', name:'M-Seal Epoxy Putty', unit:'50g pack', category:'adhesives', retail:90, wholesale:75, minQty:20},
+
+    {id:13, sku:'GRS-001', name:'Multipurpose Grease', unit:'500g tub', category:'grease', retail:160, wholesale:135, minQty:12},
+    {id:14, sku:'GRS-002', name:'Chain Lubricant Spray', unit:'400ml can', category:'grease', retail:210, wholesale:180, minQty:10},
+    {id:15, sku:'GRS-003', name:'Machine Oil', unit:'1L bottle', category:'grease', retail:190, wholesale:160, minQty:12},
+
+    {id:16, sku:'HW-001', name:'Door Hinges', unit:'pack of 2, 4-inch', category:'hardware', retail:80, wholesale:60, minQty:20},
+    {id:17, sku:'HW-002', name:'Cabinet Locks', unit:'set', category:'hardware', retail:150, wholesale:120, minQty:15},
+    {id:18, sku:'HW-003', name:'Assorted Screws Kit', unit:'200 pc box', category:'hardware', retail:250, wholesale:200, minQty:10},
+
+    {id:19, sku:'VBT-001', name:'V-Belt A-Section', unit:'per meter', category:'vbelts', retail:90, wholesale:75, minQty:20},
+    {id:20, sku:'VBT-002', name:'V-Belt B-Section', unit:'per meter', category:'vbelts', retail:120, wholesale:100, minQty:20},
+    {id:21, sku:'VBT-003', name:'Industrial Fan Belt Set', unit:'set', category:'vbelts', retail:450, wholesale:390, minQty:8},
+
+    {id:22, sku:'SAW-001', name:'Circular Saw Blade 10-inch', unit:'piece', category:'saw', retail:650, wholesale:560, minQty:6},
+    {id:23, sku:'SAW-002', name:'Hacksaw Blade', unit:'pack of 10', category:'saw', retail:180, wholesale:150, minQty:15},
+    {id:24, sku:'SAW-003', name:'Bandsaw Machine Roll', unit:'roll', category:'saw', retail:2200, wholesale:1950, minQty:4}
+  ];
+
+  // ---------------------------------------
+  // State
+  // ---------------------------------------
+  let cart = [];
+  let activeCategory = 'all';
+  let searchQuery = '';
+
+  // ---------------------------------------
+  // Helpers
+  // ---------------------------------------
+  function money(n){ return '₹' + n.toLocaleString('en-IN'); }
+  function getProduct(id){ return PRODUCTS.find(p => p.id === id); }
+  function getCategory(id){ return CATEGORIES.find(c => c.id === id); }
+  function unitPriceFor(p, qty){ return qty >= p.minQty ? p.wholesale : p.retail; }
+  function calcSubtotal(){
+    return cart.reduce((sum, item) => {
+      const p = getProduct(item.id);
+      return sum + unitPriceFor(p, item.qty) * item.qty;
+    }, 0);
+  }
+
+  // ---------------------------------------
+  // Ticker
+  // ---------------------------------------
+  function renderTicker(){
+    const names = CATEGORIES.map(c => c.name.toUpperCase()).join(' &nbsp;•&nbsp; ');
+    document.getElementById('ticker-track').innerHTML = '<span>' + names + '</span><span>' + names + '</span>';
+  }
+
+  // ---------------------------------------
+  // Category grid + footer categories
+  // ---------------------------------------
+  function renderCategoryGrid(){
+    const grid = document.getElementById('category-grid');
+    grid.innerHTML = CATEGORIES.map(cat => {
+      const count = PRODUCTS.filter(p => p.category === cat.id).length;
+      return `<div class="tag-card category-card" onclick="filterCategory('${cat.id}')">
+        <div class="category-icon"><i class="fa-solid ${cat.icon}"></i></div>
+        <div class="category-aisle">${cat.aisle}</div>
+        <div class="category-name">${cat.name}</div>
+        <div class="category-count">${count} products</div>
+      </div>`;
+    }).join('');
+
+    document.getElementById('footer-categories').innerHTML = CATEGORIES.slice(0,5).map(cat =>
+      `<li><a href="#products" onclick="filterCategory('${cat.id}')">${cat.name}</a></li>`
+    ).join('');
+  }
+
+  // ---------------------------------------
+  // Filter pills
+  // ---------------------------------------
+  function renderFilterPills(){
+    const wrap = document.getElementById('filter-pills');
+    const all = [{id:'all', name:'All Products'}].concat(CATEGORIES);
+    wrap.innerHTML = all.map(cat =>
+      `<button class="pill ${activeCategory === cat.id ? 'active' : ''}" onclick="filterCategory('${cat.id}')">${cat.name}</button>`
+    ).join('');
+  }
+
+  function filterCategory(catId){
+    activeCategory = catId;
+    renderFilterPills();
+    renderProducts();
+    document.getElementById('products').scrollIntoView({behavior:'smooth'});
+  }
+
+  // ---------------------------------------
+  // Product grid
+  // ---------------------------------------
+  function renderProducts(){
+    const grid = document.getElementById('product-grid');
+    const filtered = PRODUCTS.filter(p =>
+      (activeCategory === 'all' || p.category === activeCategory) &&
+      p.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    if(filtered.length === 0){
+      grid.innerHTML = `<div class="empty-state">No products match that search.<button class="btn btn-outline" style="color:var(--ink);border-color:var(--rule);" onclick="document.getElementById('search-input').value='';searchQuery='';filterCategory('all');">Clear filters</button></div>`;
+      return;
+    }
+    grid.innerHTML = filtered.map(p => `
+      <div class="tag-card product-card">
+        <div class="product-sku">${p.sku}</div>
+        <div class="product-icon"><i class="fa-solid ${getCategory(p.category).icon}"></i></div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-unit">${p.unit}</div>
+        <div class="price-stamp">${money(p.retail)}</div>
+        <div class="price-wholesale-tag"><i class="fa-solid fa-truck-ramp-box"></i> ${money(p.wholesale)}/unit at ${p.minQty}+</div>
+        <div class="qty-row">
+          <input type="number" min="1" value="1" id="qty-${p.id}" class="qty-input" aria-label="Quantity">
+          <button class="btn btn-primary add-btn" onclick="addToCart(${p.id})">Add to Cart</button>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // ---------------------------------------
+  // Cart
+  // ---------------------------------------
+  function addToCart(id){
+    const input = document.getElementById('qty-' + id);
+    let qty = parseInt(input.value, 10);
+    if(!qty || qty < 1) qty = 1;
+    const existing = cart.find(i => i.id === id);
+    if(existing){ existing.qty += qty; } else { cart.push({id:id, qty:qty}); }
+    input.value = 1;
+    renderCart();
+    updateCartBadge();
+    openCart();
+  }
+
+  function changeCartQty(id, delta){
+    const item = cart.find(i => i.id === id);
+    if(!item) return;
+    item.qty += delta;
+    if(item.qty < 1){ removeFromCart(id); return; }
+    renderCart();
+    updateCartBadge();
+  }
+
+  function removeFromCart(id){
+    cart = cart.filter(i => i.id !== id);
+    renderCart();
+    updateCartBadge();
+  }
+
+  function renderCart(){
+    const container = document.getElementById('cart-items');
+    const subtotalEl = document.getElementById('cart-subtotal');
+    if(cart.length === 0){
+      container.innerHTML = `<div class="empty-state">Your cart is empty.<button class="btn btn-outline" style="color:var(--ink);border-color:var(--rule);" onclick="closeCart()">Browse Products</button></div>`;
+      subtotalEl.textContent = money(0);
+      return;
+    }
+    container.innerHTML = cart.map(item => {
+      const p = getProduct(item.id);
+      const unitPrice = unitPriceFor(p, item.qty);
+      const lineTotal = unitPrice * item.qty;
+      const isWholesale = item.qty >= p.minQty;
+      const hint = isWholesale
+        ? `<div class="cart-item-hint applied">✓ Wholesale rate applied</div>`
+        : `<div class="cart-item-hint">Add ${p.minQty - item.qty} more for ${money(p.wholesale)} rate</div>`;
+      return `<div class="cart-item">
+        <div>
+          <div class="cart-item-name">${p.name}</div>
+          <div class="cart-item-unit">${p.unit} · ${money(unitPrice)} each</div>
+          ${hint}
+        </div>
+        <div class="cart-item-controls">
+          <button onclick="changeCartQty(${p.id},-1)" aria-label="Decrease quantity">−</button>
+          <span>${item.qty}</span>
+          <button onclick="changeCartQty(${p.id},1)" aria-label="Increase quantity">+</button>
+        </div>
+        <div class="cart-item-total">${money(lineTotal)}</div>
+        <button class="cart-item-remove" onclick="removeFromCart(${p.id})" aria-label="Remove item"><i class="fa-solid fa-trash"></i></button>
+      </div>`;
+    }).join('');
+    subtotalEl.textContent = money(calcSubtotal());
+  }
+
+  function updateCartBadge(){
+    const badge = document.getElementById('cart-badge');
+    const count = cart.reduce((s, i) => s + i.qty, 0);
+    if(count > 0){ badge.textContent = count; badge.style.display = 'flex'; }
+    else { badge.style.display = 'none'; }
+  }
+
+  function openCart(){
+    document.getElementById('cart-backdrop').classList.add('open');
+    document.getElementById('cart-panel').classList.add('open');
+  }
+  function closeCart(){
+    document.getElementById('cart-backdrop').classList.remove('open');
+    document.getElementById('cart-panel').classList.remove('open');
+  }
+
+  // ---------------------------------------
+  // Checkout
+  // ---------------------------------------
+  function openCheckout(){
+    if(cart.length === 0){ alert('Your cart is empty. Add some products first!'); return; }
+    renderCheckoutSummary();
+    closeCart();
+    document.getElementById('checkout-backdrop').classList.add('open');
+    document.getElementById('checkout-modal').classList.add('open');
+  }
+  function closeCheckout(){
+    document.getElementById('checkout-backdrop').classList.remove('open');
+    document.getElementById('checkout-modal').classList.remove('open');
+  }
+
+  function renderCheckoutSummary(){
+    const el = document.getElementById('checkout-summary');
+    const rows = cart.map(item => {
+      const p = getProduct(item.id);
+      const unitPrice = unitPriceFor(p, item.qty);
+      return `<div class="summary-row"><span>${p.name} × ${item.qty}</span><span>${money(unitPrice * item.qty)}</span></div>`;
+    }).join('');
+    el.innerHTML = rows + `<div class="summary-row summary-total"><span>Total</span><span>${money(calcSubtotal())}</span></div>`;
+  }
+
+  function buildOrderText(){
+    const name = document.getElementById('cust-name').value.trim();
+    const phone = document.getElementById('cust-phone').value.trim();
+    const address = document.getElementById('cust-address').value.trim();
+    const notes = document.getElementById('cust-notes').value.trim();
+    let lines = [];
+    lines.push('New Order — YOUR SHOP NAME');
+    lines.push('');
+    lines.push('Customer: ' + name);
+    lines.push('Phone: ' + phone);
+    if(address) lines.push('Address: ' + address);
+    if(notes) lines.push('Notes: ' + notes);
+    lines.push('');
+    lines.push('Order Details:');
+    cart.forEach(item => {
+      const p = getProduct(item.id);
+      const unitPrice = unitPriceFor(p, item.qty);
+      lines.push('- ' + p.name + ' x' + item.qty + ' (' + p.unit + ') @ ' + money(unitPrice) + ' = ' + money(unitPrice * item.qty));
+    });
+    lines.push('');
+    lines.push('Subtotal: ' + money(calcSubtotal()));
+    lines.push('');
+    lines.push('(Please confirm availability, delivery and payment method.)');
+    return lines.join('\n');
+  }
+
+  function validateCheckoutForm(){
+    const name = document.getElementById('cust-name').value.trim();
+    const phone = document.getElementById('cust-phone').value.trim();
+    if(!name || !phone){ alert('Please enter your name and phone number.'); return false; }
+    return true;
+  }
+
+  function sendWhatsApp(){
+    if(!validateCheckoutForm()) return;
+    const text = buildOrderText();
+    window.open('https://wa.me/' + SHOP_WHATSAPP + '?text=' + encodeURIComponent(text), '_blank');
+  }
+
+  function sendEmailOrder(){
+    if(!validateCheckoutForm()) return;
+    const text = buildOrderText();
+    window.location.href = 'mailto:' + SHOP_EMAIL + '?subject=' + encodeURIComponent('New Order from Website') + '&body=' + encodeURIComponent(text);
+  }
+
+  // ---------------------------------------
+  // Mobile nav
+  // ---------------------------------------
+  function toggleMobileNav(){ document.getElementById('nav-links').classList.toggle('open'); }
+  function closeMobileNav(){ document.getElementById('nav-links').classList.remove('open'); }
+
+  // ---------------------------------------
+  // Init
+  // ---------------------------------------
+  renderTicker();
+  renderCategoryGrid();
+  renderFilterPills();
+  renderProducts();
+  renderCart();
+  updateCartBadge();
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('contact-whatsapp-link').href = 'https://wa.me/' + SHOP_WHATSAPP + '?text=' + encodeURIComponent('Hi, I have a question about a product.');
+</script>
+</body>
+</html>
