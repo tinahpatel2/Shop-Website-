@@ -189,6 +189,13 @@
   .summary-row{display:flex;justify-content:space-between;font-size:0.84rem;padding:0.28rem 0;color:var(--muted);font-family:'Space Mono',monospace;}
   .summary-total{font-weight:700;color:var(--ink);font-size:0.95rem;border-top:1px dashed var(--rule);margin-top:0.4rem;padding-top:0.55rem;}
   .checkout-actions{display:flex;flex-direction:column;gap:0.65rem;}
+  .upi-pay-box{background:var(--card);border:2px dashed var(--steel);border-radius:6px;padding:1rem;margin:1.2rem 0;text-align:center;}
+  .upi-pay-label{font-family:'Oswald',sans-serif;font-weight:600;color:var(--steel);font-size:0.95rem;margin-bottom:0.4rem;}
+  .upi-id-row{font-family:'Space Mono',monospace;font-size:0.8rem;color:var(--muted);margin-bottom:0.7rem;}
+  .upi-id-row strong{color:var(--ink);}
+  .btn-upi{background:var(--steel);color:var(--card);justify-content:center;width:100%;}
+  .btn-upi:hover{background:#2F5561;}
+  .upi-note{font-size:0.72rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
   .btn-whatsapp{background:#1F9E52;color:var(--card);justify-content:center;}
   .btn-whatsapp:hover{background:#178041;}
   .btn-email{background:var(--ink);color:var(--card);justify-content:center;}
@@ -455,6 +462,12 @@
         <textarea id="cust-notes" placeholder="Anything else we should know"></textarea>
       </div>
       <div class="order-summary" id="checkout-summary"></div>
+      <div class="upi-pay-box">
+        <div class="upi-pay-label"><i class="fa-solid fa-qrcode"></i> Pay via UPI</div>
+        <div class="upi-id-row">UPI ID: <strong>patelbrothers.3456@sbi</strong></div>
+        <button class="btn btn-upi" onclick="payViaUPI()"><i class="fa-solid fa-indian-rupee-sign"></i> Pay <span id="upi-amount">₹0</span> Now</button>
+        <p class="upi-note">Opens GPay / PhonePe / Paytm with the amount filled in (mobile only). After paying, please still tap "Send Order via WhatsApp" below so we know what to prepare.</p>
+      </div>
       <div class="checkout-actions">
         <button class="btn btn-whatsapp" onclick="sendWhatsApp()"><i class="fa-brands fa-whatsapp"></i> Send Order via WhatsApp</button>
         <button class="btn btn-email" onclick="sendEmailOrder()"><i class="fa-solid fa-envelope"></i> Send Order via Email</button>
@@ -478,6 +491,8 @@
   // ========================================
   const SHOP_WHATSAPP = '919372557272'; // country code + number, digits only, no + or spaces
   const SHOP_EMAIL = 'phitesh909@gmail.com';
+  const SHOP_UPI_ID = 'patelbrothers.3456@sbi';
+  const SHOP_UPI_NAME = "Patel Brothers";
 
   // ========================================
   // EDIT THIS SECTION: Your Categories
@@ -779,6 +794,14 @@
       return `<div class="summary-row"><span>${p.name} × ${item.qty}</span><span>${money(unitPrice * item.qty)}</span></div>`;
     }).join('');
     el.innerHTML = rows + `<div class="summary-row summary-total"><span>Total</span><span>${money(calcSubtotal())}</span></div>`;
+    document.getElementById('upi-amount').textContent = money(calcSubtotal());
+  }
+
+  function payViaUPI(){
+    const amount = calcSubtotal();
+    if(amount <= 0){ showToast('Your cart is empty — add products first', 'fa-cart-shopping'); return; }
+    const link = 'upi://pay?pa=' + encodeURIComponent(SHOP_UPI_ID) + '&pn=' + encodeURIComponent(SHOP_UPI_NAME) + '&am=' + amount + '&cu=INR&tn=' + encodeURIComponent('Order Payment');
+    window.location.href = link;
   }
 
   function buildOrderText(){
