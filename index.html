@@ -6,25 +6,26 @@
 <title>Patel Brother's | Wholesale &amp; Retail Hardware, Plywood, Machinery &amp; Industrial Supplies</title>
 <meta name="description" content="Wholesale and retail supplier of chemicals, plywood, doors, machinery, adhesives, grease, hardware items, V-belts and saw blades.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
   :root{
-    --ink:#201D1A;
-    --ink-2:#2C2823;
-    --paper:#EDE7D8;
-    --card:#FFFDF8;
-    --stamp:#F0501B;
-    --cta:#C2410C;
-    --steel:#3E6B7A;
-    --rule:#C9BFA8;
-    --muted:#6B6252;
+    --ink:#1B4332;
+    --ink-2:#12301F;
+    --paper:#F4F6F5;
+    --card:#FFFFFF;
+    --stamp:#C9A227;
+    --cta:#1B4332;
+    --steel:#7C8B83;
+    --rule:#DCE1DE;
+    --muted:#5B655F;
     --success:#2E7D4F;
+    --gold-dark:#9A7620;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;}
-  h1,h2,h3,h4{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:0.3px;}
+  h1,h2,h3,h4{font-family:'Inter',sans-serif;font-weight:700;letter-spacing:-0.01em;}
   a{color:inherit;}
   button{font-family:inherit;}
   :focus-visible{outline:2px solid var(--stamp);outline-offset:2px;}
@@ -36,7 +37,7 @@
   .demo-banner button{position:absolute;right:0.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:0.95rem;color:#5B4A16;}
 
   /* ---------- Topbar ---------- */
-  .topbar{background:var(--ink-2);color:#BFB9AE;font-family:'Space Mono',monospace;font-size:0.74rem;padding:0.4rem 1.5rem;text-align:center;letter-spacing:0.3px;}
+  .topbar{background:var(--ink-2);color:#C7D2CB;font-family:'Inter',sans-serif;font-size:0.74rem;padding:0.4rem 1.5rem;text-align:center;letter-spacing:0.3px;}
 
   /* ---------- Header ---------- */
   .header{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:3px solid var(--stamp);}
@@ -49,7 +50,7 @@
   .nav-links a:hover{color:var(--stamp);}
   .header-actions{display:flex;align-items:center;gap:1rem;}
   .cart-btn{position:relative;background:var(--cta);color:var(--card);border:none;padding:0.6rem 1rem;border-radius:4px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;text-transform:uppercase;}
-  .cart-badge{position:absolute;top:-9px;right:-9px;background:var(--stamp);color:var(--card);border:2px solid var(--ink);border-radius:50%;width:22px;height:22px;display:none;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;font-family:'Space Mono',monospace;}
+  .cart-badge{position:absolute;top:-9px;right:-9px;background:var(--stamp);color:var(--ink);border:2px solid var(--ink);border-radius:50%;width:22px;height:22px;display:none;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;font-family:'Inter',sans-serif;}
 
   /* ---------- Hero ---------- */
   .hero{background:var(--ink);color:var(--card);position:relative;overflow:hidden;padding:4.5rem 1.5rem 3rem;background-image:repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0px, rgba(255,255,255,0.035) 1px, transparent 1px, transparent 9px);}
@@ -57,11 +58,11 @@
   .eyebrow{font-family:'Space Mono',monospace;color:var(--stamp);font-size:0.8rem;letter-spacing:2px;margin-bottom:1rem;}
   .hero h1{font-size:2.6rem;line-height:1.15;margin-bottom:1.1rem;}
   .hero h1 em{font-style:normal;color:var(--stamp);}
-  .hero p{color:#C9C2B4;font-size:1.05rem;max-width:620px;margin:0 auto 2rem;}
+  .hero p{color:#D7E3DB;font-size:1.05rem;max-width:620px;margin:0 auto 2rem;}
   .hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
   .btn{padding:0.85rem 1.7rem;border-radius:4px;font-weight:700;text-decoration:none;cursor:pointer;border:2px solid transparent;font-size:0.9rem;display:inline-flex;align-items:center;gap:0.5rem;transition:all .15s;text-transform:uppercase;letter-spacing:0.3px;}
   .btn-primary{background:var(--cta);color:var(--card);}
-  .btn-primary:hover{background:#A6360A;}
+  .btn-primary:hover{background:var(--ink-2);}
   .btn-outline{background:transparent;color:var(--card);border-color:rgba(255,253,248,0.4);}
   .btn-outline:hover{border-color:var(--card);}
 
@@ -134,22 +135,22 @@
   /* ---------- Contact ---------- */
   #contact{background:var(--ink-2);max-width:100%;padding:0;color:var(--card);}
   .contact-inner{max-width:1200px;margin:0 auto;padding:3.5rem 1.5rem;}
-  #contact .section-subtitle{color:#BFB9AE;}
+  #contact .section-subtitle{color:#C7D2CB;}
   .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.3rem;margin-top:2rem;}
   .contact-card{background:var(--ink);border:1px solid rgba(255,253,248,0.12);padding:1.4rem;border-radius:6px;text-align:center;}
   .contact-card i{font-size:1.4rem;color:var(--stamp);margin-bottom:0.7rem;}
   .contact-card h4{margin-bottom:0.35rem;font-size:0.95rem;}
-  .contact-card p{color:#BFB9AE;font-size:0.85rem;}
+  .contact-card p{color:#C7D2CB;font-size:0.85rem;}
   .contact-whatsapp{text-align:center;margin-top:2rem;}
 
   /* ---------- Footer ---------- */
-  .footer{background:var(--ink);color:#93897A;padding:2.8rem 1.5rem 1.3rem;}
+  .footer{background:var(--ink);color:#B7C4BC;padding:2.8rem 1.5rem 1.3rem;}
   .footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,253,248,0.08);}
   .footer-col h4{color:var(--card);margin-bottom:0.9rem;font-size:0.85rem;letter-spacing:0.5px;}
   .footer-col p{font-size:0.82rem;line-height:1.6;}
   .footer-col ul{list-style:none;}
   .footer-col li{margin-bottom:0.5rem;}
-  .footer-col a{text-decoration:none;font-size:0.82rem;color:#93897A;}
+  .footer-col a{text-decoration:none;font-size:0.82rem;color:#B7C4BC;}
   .footer-col a:hover{color:var(--stamp);}
   .footer-bottom{max-width:1200px;margin:0 auto;padding-top:1.3rem;text-align:center;font-size:0.76rem;font-family:'Space Mono',monospace;}
 
@@ -194,7 +195,7 @@
   .upi-id-row{font-family:'Space Mono',monospace;font-size:0.8rem;color:var(--muted);margin-bottom:0.7rem;}
   .upi-id-row strong{color:var(--ink);}
   .btn-upi{background:var(--steel);color:var(--card);justify-content:center;width:100%;}
-  .btn-upi:hover{background:#2F5561;}
+  .btn-upi:hover{background:#64726A;}
   .upi-note{font-size:0.72rem;color:var(--muted);margin-top:0.6rem;line-height:1.5;}
   .btn-whatsapp{background:#1F9E52;color:var(--card);justify-content:center;}
   .btn-whatsapp:hover{background:#178041;}
@@ -227,7 +228,7 @@
   }
 
   /* ---------- Accessibility helpers ---------- */
-  .skip-link{position:absolute;left:-9999px;top:0;background:var(--stamp);color:var(--card);padding:0.8rem 1.3rem;z-index:999;border-radius:0 0 6px 0;font-weight:700;text-decoration:none;}
+  .skip-link{position:absolute;left:-9999px;top:0;background:var(--stamp);color:var(--ink);padding:0.8rem 1.3rem;z-index:999;border-radius:0 0 6px 0;font-weight:700;text-decoration:none;}
   .skip-link:focus{left:0;}
 
   /* ---------- Scroll-reveal ---------- */
