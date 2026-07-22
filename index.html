@@ -86,6 +86,26 @@
   .section-title em{font-style:normal;color:var(--stamp);}
   .section-subtitle{color:var(--muted);margin-top:0.5rem;font-size:0.95rem;}
 
+  /* ---------- Why Choose Us ---------- */
+  .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;}
+  .trust-card{background:var(--card);border:1.5px solid var(--rule);border-radius:8px;padding:1.6rem 1.4rem;text-align:center;}
+  .trust-card-icon{width:56px;height:56px;border-radius:50%;background:var(--ink);color:var(--stamp);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto 1rem;}
+  .trust-card h3{font-size:1.05rem;margin-bottom:0.5rem;}
+  .trust-card p{color:var(--muted);font-size:0.9rem;line-height:1.6;}
+
+  /* ---------- Trusted Brands ---------- */
+  .brand-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.2rem;}
+  .brand-placeholder{background:var(--paper);border:2px dashed var(--rule);border-radius:8px;padding:1.6rem 1rem;text-align:center;color:var(--muted);font-size:0.85rem;font-weight:600;}
+  .brand-placeholder i{display:block;font-size:1.5rem;color:var(--steel);margin-bottom:0.5rem;}
+  .brand-note{text-align:center;color:var(--muted);font-size:0.82rem;margin-top:1.5rem;}
+
+  /* ---------- Who We Serve ---------- */
+  .serve-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;}
+  .serve-card{background:var(--card);border:1.5px solid var(--rule);border-radius:8px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;}
+  .serve-card-icon{width:44px;height:44px;border-radius:8px;background:var(--paper);color:var(--stamp);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+  .serve-card h3{font-size:0.98rem;margin-bottom:0.3rem;}
+  .serve-card p{color:var(--muted);font-size:0.85rem;line-height:1.5;}
+
   /* ---------- Category grid ---------- */
   .category-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1.4rem;}
   .tag-card{position:relative;background:var(--card);border:1.5px solid var(--rule);border-top:none;border-radius:0 0 6px 6px;}
@@ -312,6 +332,89 @@
       <div class="hero-buttons">
         <a href="#products" class="btn btn-primary"><i class="fa-solid fa-boxes-stacked"></i> Browse Products</a>
         <a href="#contact" class="btn btn-outline"><i class="fa-solid fa-location-dot"></i> Visit The Store</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-us" class="section reveal">
+    <div class="section-header">
+      <div class="section-eyebrow">WHY PATEL BROTHER'S</div>
+      <h2 class="section-title">Built on <em>Trust</em></h2>
+      <p class="section-subtitle">What two decades of service looks like.</p>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <h3>Established Since 2005</h3>
+        <p>Two decades of trusted service to the trade and retail community.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon"><i class="fa-solid fa-industry"></i></div>
+        <h3>Industrial Supply Solutions</h3>
+        <p>Competitive bulk pricing without losing single-piece flexibility.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon"><i class="fa-solid fa-award"></i></div>
+        <h3>Genuine Products Only</h3>
+        <p>Authentic stock, no compromises on quality.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon"><i class="fa-solid fa-boxes-packing"></i></div>
+        <h3>Bulk &amp; Pallet Fulfillment</h3>
+        <p>Equipped to handle large orders for contractors and businesses.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon"><i class="fa-solid fa-headset"></i></div>
+        <h3>Technical Sales Support</h3>
+        <p>Knowledgeable support to help you pick the right product for the job.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <h3>Flexible Order Fulfillment</h3>
+        <p>Store pickup or delivery, arranged to suit your timeline.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="brands" class="section reveal">
+    <div class="section-header">
+      <div class="section-eyebrow">WHAT WE STOCK</div>
+      <h2 class="section-title">Trusted <em>Brands</em> We Supply</h2>
+      <p class="section-subtitle">Placeholder tiles — replace with your real supplier logos.</p>
+    </div>
+    <div class="brand-grid">
+      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 1</div>
+      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 2</div>
+      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 3</div>
+      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 4</div>
+      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 5</div>
+      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 6</div>
+    </div>
+    <p class="brand-note">[Replace these tiles with real brand/supplier logos. Only list brands you have a genuine supply or dealership relationship with.]</p>
+  </section>
+
+  <section id="who-we-serve" class="section reveal">
+    <div class="section-header">
+      <div class="section-eyebrow">RETAIL &amp; WHOLESALE</div>
+      <h2 class="section-title">Who We <em>Serve</em></h2>
+      <p class="section-subtitle">One counter, two kinds of buyers.</p>
+    </div>
+    <div class="serve-grid">
+      <div class="serve-card">
+        <div class="serve-card-icon"><i class="fa-solid fa-person"></i></div>
+        <div><h3>Retail Customers</h3><p>Walk-in buyers for households, repairs, and everyday needs.</p></div>
+      </div>
+      <div class="serve-card">
+        <div class="serve-card-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+        <div><h3>Wholesale &amp; Trade Buyers</h3><p>Bulk pricing for businesses, contractors, and institutions.</p></div>
+      </div>
+      <div class="serve-card">
+        <div class="serve-card-icon"><i class="fa-solid fa-building"></i></div>
+        <div><h3>Small &amp; Medium Businesses</h3><p>Regular stock support at trade rates.</p></div>
+      </div>
+      <div class="serve-card">
+        <div class="serve-card-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+        <div><h3>Bulk &amp; Project Orders</h3><p>Large quantity fulfillment, no order too big.</p></div>
       </div>
     </div>
   </section>
