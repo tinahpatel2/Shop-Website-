@@ -161,7 +161,7 @@
   .contact-card i{font-size:1.4rem;color:var(--stamp);margin-bottom:0.7rem;}
   .contact-card h4{margin-bottom:0.35rem;font-size:0.95rem;}
   .contact-card p{color:#C7D2CB;font-size:0.85rem;}
-  .contact-whatsapp{text-align:center;margin-top:2rem;}
+  .contact-whatsapp{text-align:center;margin-top:2rem;display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;}
 
   /* ---------- Footer ---------- */
   .footer{background:var(--ink);color:#B7C4BC;padding:2.8rem 1.5rem 1.3rem;}
@@ -300,7 +300,7 @@
     <button onclick="document.getElementById('demo-banner').style.display='none'" aria-label="Dismiss">✕</button>
   </div>
 
-  <div class="topbar">CALL/WHATSAPP: +91-9372557272 &nbsp;·&nbsp; +91-9422149494 &nbsp;·&nbsp; MON–SAT 9:00 AM – 8:00 PM &nbsp;·&nbsp; WHOLESALE &amp; RETAIL</div>
+  <div class="topbar">CALL/WHATSAPP: +91-9372557272 &nbsp;·&nbsp; +91-9422149494 &nbsp;·&nbsp; +91-8007077050 &nbsp;·&nbsp; MON–SAT 9:00 AM – 8:00 PM &nbsp;·&nbsp; WHOLESALE &amp; RETAIL</div>
 
   <header class="header">
     <div class="header-inner">
@@ -380,17 +380,15 @@
     <div class="section-header">
       <div class="section-eyebrow">WHAT WE STOCK</div>
       <h2 class="section-title">Trusted <em>Brands</em> We Supply</h2>
-      <p class="section-subtitle">Placeholder tiles — replace with your real supplier logos.</p>
+      <p class="section-subtitle">Genuine stock from leading names in plywood and boards.</p>
     </div>
     <div class="brand-grid">
-      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 1</div>
-      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 2</div>
-      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 3</div>
-      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 4</div>
-      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 5</div>
-      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Brand 6</div>
+      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Bison Panel</div>
+      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Qbuba</div>
+      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Greenply</div>
+      <div class="brand-placeholder"><i class="fa-solid fa-tag"></i>Greenply Samet</div>
     </div>
-    <p class="brand-note">[Replace these tiles with real brand/supplier logos. Only list brands you have a genuine supply or dealership relationship with.]</p>
+    <p class="brand-note">[More brands can be added as your dealership relationships grow.]</p>
   </section>
 
   <section id="who-we-serve" class="section reveal">
@@ -484,13 +482,14 @@
         <p class="section-subtitle">Drop by the counter, or reach us directly for wholesale enquiries.</p>
       </div>
       <div class="contact-grid">
-        <div class="contact-card"><i class="fa-solid fa-location-dot"></i><h4>Address</h4><p>[Shop No., Street, Market Area]<br>[City, State – PIN]</p></div>
-        <div class="contact-card"><i class="fa-solid fa-phone"></i><h4>Phone</h4><p>+91-9372557272 (WhatsApp)<br>+91-9422149494</p></div>
+        <div class="contact-card"><i class="fa-solid fa-location-dot"></i><h4>Address</h4><p>Shop No. 2, Guruvandana Apartment,<br>Opp. Moscote Honda Service Centre, Beside SBI Bank,<br>Lakadganj, Nagpur – 440008</p></div>
+        <div class="contact-card"><i class="fa-solid fa-phone"></i><h4>Phone</h4><p>+91-9372557272 (WhatsApp)<br>+91-9422149494<br>+91-8007077050</p></div>
         <div class="contact-card"><i class="fa-solid fa-envelope"></i><h4>Email</h4><p>phitesh909@gmail.com</p></div>
         <div class="contact-card"><i class="fa-solid fa-clock"></i><h4>Hours</h4><p>Mon–Sat: 9:00 AM – 8:00 PM<br>Sun: Closed</p></div>
       </div>
       <div class="contact-whatsapp">
         <a class="btn btn-whatsapp" id="contact-whatsapp-link" href="#"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+        <a class="btn btn-primary" id="get-directions-link" href="https://goo.gl/maps/Uh3DeggkLruG8pPD8" target="_blank" rel="noopener"><i class="fa-solid fa-map-location-dot"></i> Get Directions</a>
       </div>
     </div>
   </section>
@@ -519,6 +518,7 @@
         <ul>
           <li>+91-9372557272</li>
           <li>+91-9422149494</li>
+          <li>+91-8007077050</li>
           <li>phitesh909@gmail.com</li>
           <li>Mon–Sat, 9AM–8PM</li>
         </ul>
@@ -597,6 +597,7 @@
   const SHOP_EMAIL = 'phitesh909@gmail.com';
   const SHOP_UPI_ID = 'patelbrothers.3456@sbi';
   const SHOP_UPI_NAME = "Patel Brothers";
+  const SHOP_MAPS_LINK = 'https://goo.gl/maps/Uh3DeggkLruG8pPD8';
 
   // ========================================
   // EDIT THIS SECTION: Your Categories
